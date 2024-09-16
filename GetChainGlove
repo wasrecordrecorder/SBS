@@ -1,0 +1,61 @@
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+repeat wait() until game.Players.LocalPlayer
+repeat wait() until game.Workspace:FindFirstChild("Map") and game.Workspace.Map:FindFirstChild("CodeBrick")
+
+if game.Workspace.Map.CodeBrick.SurfaceGui:FindFirstChild("IMGTemplate") then
+    game.Workspace.Map.CodeBrick.SurfaceGui.IMGTemplate.Name = "1st"
+    game.Workspace.Map.CodeBrick.SurfaceGui.IMGTemplate.Name = "2nd"
+    game.Workspace.Map.CodeBrick.SurfaceGui.IMGTemplate.Name = "3rd"
+    game.Workspace.Map.CodeBrick.SurfaceGui.IMGTemplate.Name = "4th"
+end
+
+local function getNumberFromImage(image)
+    local imageMap = {
+        ["http://www.roblox.com/asset/?id=9648769161"] = "4",
+        ["http://www.roblox.com/asset/?id=9648765536"] = "2",
+        ["http://www.roblox.com/asset/?id=9648762863"] = "3",
+        ["http://www.roblox.com/asset/?id=9648759883"] = "9",
+        ["http://www.roblox.com/asset/?id=9648755440"] = "8",
+        ["http://www.roblox.com/asset/?id=9648752438"] = "2",
+        ["http://www.roblox.com/asset/?id=9648749145"] = "8",
+        ["http://www.roblox.com/asset/?id=9648745618"] = "3",
+        ["http://www.roblox.com/asset/?id=9648742013"] = "7",
+        ["http://www.roblox.com/asset/?id=9648738553"] = "8",
+        ["http://www.roblox.com/asset/?id=9648734698"] = "2",
+        ["http://www.roblox.com/asset/?id=9648730082"] = "6",
+        ["http://www.roblox.com/asset/?id=9648723237"] = "3",
+        ["http://www.roblox.com/asset/?id=9648718450"] = "6",
+        ["http://www.roblox.com/asset/?id=9648715920"] = "6",
+        ["http://www.roblox.com/asset/?id=9648712563"] = "2"
+    }
+    return imageMap[image]
+end
+local first, second, third, fourth
+for i, v in pairs(game.Workspace.Map.CodeBrick.SurfaceGui:GetChildren()) do
+    if v.Name == "1st" then
+        first = getNumberFromImage(v.Image)
+    elseif v.Name == "2nd" then
+        second = getNumberFromImage(v.Image)
+    elseif v.Name == "3rd" then
+        third = getNumberFromImage(v.Image)
+    elseif v.Name == "4th" then
+        fourth = getNumberFromImage(v.Image)
+    end
+end
+fireclickdetector(game.Workspace.Map.OriginOffice.Door.Keypad.Buttons.Reset.ClickDetector)
+task.wait(0.8)
+fireclickdetector(game.Workspace.Map.OriginOffice.Door.Keypad.Buttons[first].ClickDetector)
+task.wait(0.8)
+fireclickdetector(game.Workspace.Map.OriginOffice.Door.Keypad.Buttons[second].ClickDetector)
+task.wait(0.8)
+fireclickdetector(game.Workspace.Map.OriginOffice.Door.Keypad.Buttons[third].ClickDetector)
+task.wait(0.8)
+fireclickdetector(game.Workspace.Map.OriginOffice.Door.Keypad.Buttons[fourth].ClickDetector)
+task.wait(0.8)
+fireclickdetector(game.Workspace.Map.OriginOffice.Door.Keypad.Buttons.Enter.ClickDetector)
+task.wait(2)
+print("Code: " .. first .. second .. third .. fourth)
+print("All Ready")
