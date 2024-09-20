@@ -6546,6 +6546,7 @@ Tab7:AddToggle({
         SlapAura = Value
         if _G.SlapAuraChoose == "Normal" then
             while SlapAura and SlapAuraFriend == "Fight" and _G.SlapAuraChoose == "Normal" do
+		print("enabled")
                 pcall(function()
                     for i, v in pairs(game.Players:GetChildren()) do
                         if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
@@ -6553,6 +6554,7 @@ Tab7:AddToggle({
                                 if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove.Value == "Error" then
                                     Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                                     if _G.ReachSlapArua >= Magnitude then
+					print("slap player")
                                         gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild("HumanoidRootPart"), true)
                                     end
                                 end
