@@ -1748,6 +1748,11 @@ end
 })
 
 Tab3:AddButton({
+	Name = "Tp Maze Elude"
+	Callback = game:GetService("TeleportService"):Teleport(11828384869)
+})
+
+Tab3:AddButton({
 	Name = "Get Glove [Redacted]",
 	Callback = function()
 if game.Players.LocalPlayer.leaderstats.Slaps.Value >= 5000 then
