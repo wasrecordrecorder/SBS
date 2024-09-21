@@ -1751,7 +1751,8 @@ Tab3:AddButton({
 	Name = "Tp Maze Elude"
 	Callback = function()
 	    game:GetService("TeleportService"):Teleport(11828384869)
-})
+	end
+})  	
 
 Tab3:AddButton({
 	Name = "Get Glove [Redacted]",
