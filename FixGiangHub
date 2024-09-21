@@ -6272,16 +6272,15 @@ end
 })
 
 Tab7:AddButton({
-	Name = "Auto Play Rhythm",
-	Callback = function()
-game.Players.LocalPlayer.PlayerGui.Rhythm.MainFrame.Bars.ChildAdded:Connect(function()
-task.delay(1.65, function()
-game.Players.LocalPlayer.Character:FindFirstChild("Rhythm"):Activate()
-end)
-end)
-  	end    
+    Name = "Auto Play Rhythm",
+    Callback = function()
+        game.Players.LocalPlayer.PlayerGui.Rhythm.MainFrame.Bars.ChildAdded:Connect(function()
+            task.delay(1.7, function()
+                game.Players.LocalPlayer.Character:FindFirstChild("Rhythm"):Activate()
+            end)
+        end)
+    end    
 })
-
 Tab7:AddDropdown({
 	Name = "Rojo Spawn",
 	Default = "",
